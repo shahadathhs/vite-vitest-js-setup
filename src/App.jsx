@@ -9,6 +9,7 @@ import { ThemeProvider } from "./providers/ThemeProvider";
 
 import React from "react";
 import AddUsers from "./pages/AddUsers";
+import UsersProvider from "./providers/UsersProvider";
 
 export default function App({ useRouter = true }) {
   // const data = [
@@ -24,6 +25,7 @@ export default function App({ useRouter = true }) {
     // </main>
     <RouterComponent>
       <ThemeProvider>
+        <UsersProvider>
         <main className="min-h-screen">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -33,6 +35,7 @@ export default function App({ useRouter = true }) {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
+        </UsersProvider>
       </ThemeProvider>
     </RouterComponent>
   );

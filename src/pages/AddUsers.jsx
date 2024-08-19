@@ -1,10 +1,7 @@
 import { useUsers } from './../hooks/useUsers';
 
-import { useState } from "react";
-
 export default function AddUsers() {
-  // const { setUsers } = useUsers();
-  const [user, setUser] = useState();
+  const { users, setUsers } = useUsers();
 
   const addUser = (e) => {
     e.preventDefault();
@@ -16,12 +13,12 @@ export default function AddUsers() {
       email: formData.get('email'),
       phone: formData.get('phone'),
     };
-    setUser(data);
+
+    setUsers((prevUsers) => [...prevUsers, data]);
     console.log(data);
+    e.target.reset();
   }
   
-  // setUsers((prevUsers) => [...prevUsers, user]);
-
   return (
     <div>
       <h1>Add Users</h1>
@@ -29,6 +26,10 @@ export default function AddUsers() {
       <br />
 
       <h2>Add Users Form</h2>
+
+      <br />
+      <p>Total users: {users.length}</p>
+      <br />
 
       <form onSubmit={addUser}>
         <label>First Name</label>
