@@ -9,10 +9,10 @@ export default function About() {
       <p>This is the about page.</p>
 
       <br />
-      <Link to="/">Go to Home</Link>
-
+      <Link to="/" className="text-blue-500 px-4 py-2 border-2 rounded-md">Go to Home</Link>
       <br />
-      <Link to="/contact">Go to Contact</Link>
+      <br />
+      <Link to="/contact" className="text-blue-500 px-4 py-2 border-2 rounded-md">Go to Contact</Link>
     </div>
   )
 }

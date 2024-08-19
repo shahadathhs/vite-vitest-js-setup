@@ -9,10 +9,10 @@ export default function Contact() {
       <p>This is the contact page.</p>
 
       <br />
-      <Link to="/">Go to Home</Link>
-
+      <Link to="/" className="text-blue-500 px-4 py-2 border-2 rounded-md">Go to Home</Link>
       <br />
-      <Link to="/about">Go to About</Link>
+      <br />
+      <Link to="/about" className="text-blue-500 px-4 py-2 border-2 rounded-md">Go to About</Link>
     </div>
   )
 }

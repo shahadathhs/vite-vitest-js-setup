@@ -1,11 +1,14 @@
 // import TestWithMockData from "./components/TestWithMockData";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home';
-import About from './pages/About';
-import NotFound from './pages/NotFound';
-import Contact from './pages/Contact';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import NotFound from "./pages/NotFound";
+import Contact from "./pages/Contact";
+import PropTypes from "prop-types";
+import { ThemeProvider } from "./providers/ThemeProvider";
 
-import React from 'react';
+import React from "react";
+import AddUsers from "./pages/AddUsers";
 
 export default function App({ useRouter = true }) {
   // const data = [
@@ -20,20 +23,21 @@ export default function App({ useRouter = true }) {
     //   <TestWithMockData data={data} />
     // </main>
     <RouterComponent>
-      <main className="min-h-screen">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </main>
+      <ThemeProvider>
+        <main className="min-h-screen">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/users" element={<AddUsers />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+      </ThemeProvider>
     </RouterComponent>
-  )
+  );
 }
 
-import PropTypes from 'prop-types';
-
 App.propTypes = {
-  useRouter: PropTypes.bool
+  useRouter: PropTypes.bool,
 };
