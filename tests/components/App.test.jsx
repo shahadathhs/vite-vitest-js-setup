@@ -12,7 +12,8 @@ describe('App Routing', () => {
   it('should render Home component on the root path', () => {
     customRender(<App useRouter={false} />);
 
-    expect(screen.getByRole('heading')).toHaveTextContent(/home/i);
+    const homeHeading = screen.getByRole('heading', { name: /home/i });
+    expect(homeHeading).toHaveTextContent(/home/i);
   });
 
   it('should render About component on the /about path', async () => {

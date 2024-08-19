@@ -33,19 +33,19 @@ export default function AddUsers() {
 
       <form onSubmit={addUser}>
         <label>First Name</label>
-        <input type="text" name="first_name" className='input input-bordered' />
+        <input type="text" name="first_name" className='input input-bordered' required />
         <br />
         <br />
         <label>Last Name</label>
-        <input type="text" name="last_name"  className='input input-bordered'/>
+        <input type="text" name="last_name"  className='input input-bordered' required/>
         <br />
         <br />
         <label>Email</label>
-        <input type="email" name="email"  className='input input-bordered'/>
+        <input type="email" name="email"  className='input input-bordered' required/>
         <br />
         <br />
         <label>Phone</label>
-        <input type="tel" name="phone"  className='input input-bordered'/>
+        <input type="tel" name="phone"  className='input input-bordered' required/>
         <br />
         <br />
         <button type="submit" className="btn btn-primary">Submit</button>

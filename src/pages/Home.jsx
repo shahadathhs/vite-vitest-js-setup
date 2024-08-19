@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import { useTheme } from "./../hooks/useTheme";
+import TestWithMockData from './../components/TestWithMockData';
 
 export default function Home() {
   const { theme, toggleTheme } = useTheme();
+  const data = [
+    { id: 1, first_name: 'Fletcher', last_name: 'McVanamy', email: 'mmcvanamy0@e-recht24.de' },
+    { id: 2, first_name: 'Clarice', last_name: 'Harrild', email: 'charrild1@dion.ne.jp' },
+  ]
 
   return (
     <div>
@@ -33,6 +38,10 @@ export default function Home() {
       <Link to="/users" className="text-blue-500 px-4 py-2 border-2 rounded-md">
         Go to Users
       </Link>
+
+     <main className="min-h-screen">
+      <TestWithMockData data={data} />
+    </main>
     </div>
   );
 }
